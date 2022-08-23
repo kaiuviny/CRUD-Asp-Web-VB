@@ -13,6 +13,35 @@ Public Class _Default
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         'ListProduct()
+        loadUnit()
+    End Sub
+
+    Private Sub loadUnit()
+        Try
+            open()
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            Dim sql As String = "SELECT * FROM unit;"
+
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+
+            If dt.Rows.Count > 0 Then
+                ddlUnit.DataMember = "unit"
+                ddlUnit.DataTextField = "unit"
+                ddlUnit.DataSource = dt
+            End If
+
+        Catch ex As Exception
+        Finally
+            close()
+        End Try
+    End Sub
+    Private Sub loadstatus()
+
+    End Sub
+    Private Sub loadColor()
+
     End Sub
 
     Protected Sub btnInsertProduct_Click(sender As Object, e As EventArgs) Handles btnInsertProduct.Click

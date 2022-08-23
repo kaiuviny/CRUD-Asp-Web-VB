@@ -40,9 +40,7 @@
                 </td>
                 <td>
                     <asp:DropDownList ID="ddlUnit" runat="server" Font-Size="Medium" Width="200px">
-                        <asp:ListItem Value="KG"></asp:ListItem>
-                        <asp:ListItem Value="PCS"></asp:ListItem>
-                        <asp:ListItem Value="DZN"></asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
